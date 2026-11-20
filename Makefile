@@ -4,7 +4,7 @@ SRC = src
 TASK = task1
 DIR_TASK = $(SRC)
 
-TASK_NUM = 1
+TASK_NUM = 2
 CFLAGS = -DTASK=$(TASK_NUM)
 
 OUTPUT = build
