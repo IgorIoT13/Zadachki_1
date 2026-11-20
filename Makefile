@@ -2,7 +2,10 @@ CC = gcc
 
 SRC = src
 TASK = task1
-DIR_TASK = $(SRC)/$(TASK)
+DIR_TASK = $(SRC)
+
+TASK_NUM = 1
+CFLAGS = -DTASK=$(TASK_NUM)
 
 OUTPUT = build
 
@@ -13,12 +16,14 @@ all: $(OUTPUT) app
 $(OUTPUT):
 	mkdir $(OUTPUT)
 
-app: $(OUTPUT)/main.o $(OUTPUT)/task1.o
-	$(CC) $(OUTPUT)/main.o $(OUTPUT)/task1.o -o $(OUTPUT)/app
+app: $(OUTPUT)/main.o $(OUTPUT)/task.o
+	$(CC) $(FLAGS) $(OUTPUT)/main.o $(OUTPUT)/task.o -o $(OUTPUT)/app
 
-$(OUTPUT)/task1.o: $(DIR_TASK).c | $(OUTPUT)
-	$(CC) -c $(DIR_TASK).c -o $(OUTPUT)/task1.o
+# TASK
+$(OUTPUT)/task.o: $(DIR_TASK)/task$(TASK_NUM).c | $(OUTPUT)
+	$(CC) $(CFLAGS) -c $(DIR_TASK)/task$(TASK_NUM).c -o $(OUTPUT)/task.o
 
+#MAI
 $(OUTPUT)/main.o: main.c | $(OUTPUT)
 	$(CC) -c main.c -o $(OUTPUT)/main.o
 

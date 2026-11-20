@@ -1,5 +1,5 @@
-#include "task1.h"
-
+#if TASK == 1
+#include "task.h"
 
 
 uint start_point(uint a, uint b, uint c) {
@@ -25,3 +25,5 @@ void start_app(){
 
     printf("Results: %d", res);
 }
+
+#endif
