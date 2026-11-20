@@ -1,13 +1,7 @@
 #include <stdio.h>
-#define TASK 1
+#include "src/task.h"
 
-#if TASK == 1
-
-#include "src/task1.h"
-#elif TASK == 2
-
-#endif
-
-void main(void *ptr){
+int main(){
     start_app();
+    return 0;
 }
