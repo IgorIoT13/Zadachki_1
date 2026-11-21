@@ -61,7 +61,8 @@ uint start_point(uint a, uint b, uint c);
 
 uint start_point(uint n, uint m, uint k);
 
-
+#elif TASK == 3
+uint start_point(uint n, uint m);
 #endif 
 
 
